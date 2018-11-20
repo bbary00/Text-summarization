@@ -1,0 +1,8 @@
+Primal folder "Первісні віки" has 3 folders with data:
+	Trash: 18 txt files with 18 topics about a primal time
+	Cleaned: here all cleaned data from (!?.,%^ ets) marks is
+	Dictionary: txt files with pair (word - number in text) 
+
+After reviewing all files with data delete all files from "Cleaned" and "Dictionary" folders and run cleaning_text.py. Check wether you have the same data created in those folders.
+
+v. 0.1.0
