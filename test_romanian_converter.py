@@ -1,14 +1,17 @@
-﻿import unittest
+import unittest
 import roman
 
 
 def convert(text):
     """Converts romanian numbers in text to common numbers"""
+    #Creating a dictionary of roman-arabic pairs
     roman_pairs = dict([roman.toRoman(arabic), arabic] for arabic in range(1, 4001))
     text = text.split()
     for word in text:
+        #Searching for coincsdence in dict keys word by word
         if word in roman_pairs.keys():
-            # Check whether our word is last, then check previous
+            # Check whether our word is last, then check previous word for English letter
+            # If English - don't change 
             if word is text[-1] and ord(text[text.index(word) - 1][0]) not in range(65, 123):
                 text[text.index(word)] = str(roman_pairs[word])
             # If not last check following
@@ -17,9 +20,6 @@ def convert(text):
             else:
                 pass
     return ' '.join(text)
-
-
-# and (text[text.index(word) + 1][0] not in range(65, 123))
 
 
 class TestRomanianConvert(unittest.TestCase):
@@ -52,7 +52,6 @@ class TestRomanianConvert(unittest.TestCase):
         self.assertEqual(convert('My brother and I would like to live in 10th century'),
                          'My brother and I would like to live in 10th century')
 
-    # TODO yrunts: add more tests here, think about different cases
 
 
 if __name__ == "__main__":
