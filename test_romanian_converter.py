@@ -8,7 +8,7 @@ def convert(text):
     roman_pairs = dict([roman.toRoman(arabic), arabic] for arabic in range(1, 4001))
     text = text.split()
     for word in text:
-        #Searching for coincsdence in dict keys word by word
+        #Searching for coincidence in dict keys word by word
         if word in roman_pairs.keys():
             # Check whether our word is last, then check previous word for English letter
             # If English - don't change 
