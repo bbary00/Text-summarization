@@ -11,7 +11,7 @@ def convert(text):
         #Searching for coincidence in dict keys word by word
         if word in roman_pairs.keys():
             # Check whether our word is last, then check previous word for English letter
-            # If English - don't change 
+            # If English - don't change
             if word is text[-1] and ord(text[text.index(word) - 1][0]) not in range(65, 123):
                 text[text.index(word)] = str(roman_pairs[word])
             # If not last check following
@@ -42,6 +42,10 @@ class TestRomanianConvert(unittest.TestCase):
             convert('Держава антів проіснувала близько трьох століть (кінець IV - початок VII ст. )'),
             'Держава антів проіснувала близько трьох століть (кінець 4 - початок 7 ст. )')
 
+        self.assertEqual(convert('I...'), 'I...')
+        self.assertEqual(convert('XX століття'), '20 століття')
+        self.assertEqual(convert('XX'), '20')
+
     def test_eng(self):
         """Letter 'I' should not be converted to number"""
 
@@ -51,6 +55,9 @@ class TestRomanianConvert(unittest.TestCase):
         self.assertEqual(convert('My size is XL'), 'My size is XL')
         self.assertEqual(convert('My brother and I would like to live in 10th century'),
                          'My brother and I would like to live in 10th century')
+
+        self.assertEqual(convert('Kyiv was found in VI century'),
+                        'Kyiv was found in 6 century')
 
 
 
