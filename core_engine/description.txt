@@ -1,0 +1,10 @@
+05.01
+
+summarizator_v1.py first working code that is able to evaluate sentences by tokened words and create entered number of sentence summary.
+sample_of_summarization.txt sample of English text summary
+
+19.02
+
+transforming.py is an updated version of summarizator_v1.py that is ready to work with json files.
+find_all_url_data.py - program for automatic collection of training data from a website
+text_finder.py - extract text tags
