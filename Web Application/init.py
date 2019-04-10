@@ -11,10 +11,10 @@ def summary():
    text = request.form['text']
    sent = request.form['sentence']
    summ = summarize(text, sent)
-   print(summ)
    return jsonify(summ)
 
 
 
 if __name__ == '__main__':
+
 	app.run(debug=True)

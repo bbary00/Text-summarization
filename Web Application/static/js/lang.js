@@ -4,6 +4,7 @@ arrLang={
 		'sent':"Sentence",
 		'required':"Required",
 		'select':"Select the number of sentences",
+		'result':"Result",
 
 
 	},
@@ -12,6 +13,7 @@ arrLang={
 		'sent':"Речення",
 		'required':"Обов'язково",
 		'select':"Виберіть кількість речень",
+		'result':"Результат",
 
 	}
 }

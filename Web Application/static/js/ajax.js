@@ -11,15 +11,9 @@ $(document).ready(function() {
 			url : '/summarization'
 		})
 		.done(function(data) {
-			alert(data);
-			// if (data.error) {
-			// 	$('#errorAlert').text(data.error).show();
-			// 	$('#successAlert').hide();
-			// }
-			// else {
-			// 	$('#successAlert').text(data.name).show();
-			// 	$('#errorAlert').hide();
-			// }
+			$(".res").show();
+			$(window).scrollTop($(".res").offset().top);
+		    document.getElementById("result").value = data;
 
 		});
 

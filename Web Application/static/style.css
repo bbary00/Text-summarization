@@ -109,7 +109,7 @@ h2{
 	margin:0;
 }
 .btn{
-	margin: 20px 0 150px 0;
+	margin: 20px 0 25px 0;
 	color:#9c35dc;
 	border-color: #9c35dc;
 	min-width: 250px;
@@ -127,4 +127,12 @@ h2{
 }
 .btn:disabled:hover{
 	color: white;
+}
+.res{
+	display: none;
+}
+#result{
+	width: 100%;
+	min-height: 300px;
+	margin-bottom: 100px;
 }
