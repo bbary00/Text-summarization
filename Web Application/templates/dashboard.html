@@ -6,19 +6,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
-	<script src = "{{ url_for('static', filename = 'jquery.js')}}" ></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<script src = "{{ url_for('static', filename='js/jquery.js')}}" ></script>
 </head>
 <body>
+	<div class="preloader"></div>
 	<header>
 		<div class="fl-left">
-			<a href="" class="logo"><img src="{{ url_for('static', filename='user.png')}}" alt="profile"></a>
+			<a href="profile.html" class="logo"><img src="{{ url_for('static', filename='images/user.png')}}" alt="profile"></a>
+			<div class="buttons">
+				<a href="{{ url_for('login') }}"><button>Login</button></a>
+				<a href="{{ url_for('signup') }}"><button>Sign up</button></a>
+			</div>
 		</div>
 		<a href="#" class="badge badge-danger"><h1>Press</h1></a>
 		<div class="fl-right">
-			<button class="translate" id="en"><img src="{{ url_for('static', filename='UK.png')}}" alt=""></button>
-			<button class="translate" id="ua"><img src="{{ url_for('static', filename='UA.png')}}" alt=""></button>
+			<button class="translate" id="en"><img src="{{ url_for('static', filename='images/UK.png')}}" alt=""></button>
+			<button class="translate" id="ua"><img src="{{ url_for('static', filename='images/UA.png')}}" alt=""></button>
 		</div>	
 	</header>
 	<div class="clear"></div>
@@ -41,11 +45,17 @@
 			</div>
 		</div>
 		<button type="button" class="btn btn-outline-success" id="press" disabled>PRESS</button>
+		<div class="res">
+			<h2 class="lang" key="result">Result</h2>
+			<textarea class="form-control"name="" id="result" ></textarea>
+		</div>
 	</div>
+
+
 	<!-- container -->
-	<script src = "{{ url_for('static', filename = 'main.js')}}" ></script>
-	<script src = "{{ url_for('static', filename = 'lang.js')}}" ></script>
-	<script src = "{{ url_for('static', filename = 'ajax.js')}}" ></script>
+	<script src = "{{ url_for('static', filename='js/main.js')}}" ></script>
+	<script src = "{{ url_for('static', filename='js/lang.js')}}" ></script>
+	<script src = "{{ url_for('static', filename='js/ajax.js')}}" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
