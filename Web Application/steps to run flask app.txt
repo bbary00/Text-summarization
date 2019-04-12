@@ -1,9 +1,5 @@
 Open command line
-cd ..\Text-summarization\Web Application (instead of dots input your PATH)
-pip install virtualenv
-virtualenv venv
-venv\Scripts\pip install flask
-cd venv\Scripts
-activate
-cd ..\..
+cd ../Text-summarization/Web Application 
+source venv/bin/activate
+cd ../..
 python.exe init.py
