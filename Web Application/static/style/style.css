@@ -1,0 +1,357 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	padding:0 80px 0;
+	background: #eee;
+}
+h1{
+	font-family: 'Indie Flower', cursive;
+	font-size: 75px;
+	margin:0;
+	display: inline-block;
+}
+a{
+	text-decoration: none;
+	color: black;	
+}
+
+header{
+	text-align: center;
+	padding: 10px;
+	min-height: 100px;
+	width: 100%;
+	position: relative;
+}
+
+.logo img{
+	display:block;
+	height: 70px;
+	width: 70px;
+}
+.logo{
+	display: inline-block;
+	margin:10px 0 10px 0;
+}
+.clear{
+	clear: both;
+}
+.fl-left{
+	float: left;
+}
+.fl-right{
+	float: right;
+}
+.badge-danger{
+	background-color: #9c35dc;
+}
+.badge-danger[href]:hover{
+	background-color: #53137a;
+}
+.container-x{
+	width: calc(100% - 200px);
+	text-align: center;
+	margin:auto;
+}
+h2{
+	text-align: center;
+	color: white;
+	background-color: #9c35dc;
+	border-radius: 10px;
+	margin: 0;
+	padding-bottom: 5px;
+	margin: 0 0 10px;
+}
+.translate img{
+	height: 25px;
+}
+
+.translate {
+	background-color:  #eee;
+	border:none;
+	outline: none;
+	display: inline-block;
+	cursor: pointer;
+
+}
+.logo img:hover{
+   transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+    transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+}
+#area{
+	width: 100%;
+	min-height: 300px;
+	margin-bottom: 10px
+}
+
+.block{
+	min-height: 50px;
+	min-width: 250px;
+	display: inline-block;
+	background-color: white;
+	border-radius: .25rem;
+}
+.block p{
+	font-weight: bold;
+	margin:0;
+	background-color: #9c35dc;
+	border-radius: .25rem .25rem 0 0 ;
+	color: white;
+}
+.form-group{
+	margin:0;
+}
+.btn{
+	margin: 20px 0 25px 0;
+	color:#9c35dc;
+	border-color: #9c35dc;
+	min-width: 250px;
+	min-height: 75px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 60px;
+}
+.btn:hover{
+	background-color: #9c35dc;
+	border-color: #9c35dc;
+	
+}
+.btn:disabled{
+	color: #9c35dc;
+}
+.btn:disabled:hover{
+	color: white;
+}
+.res{
+	display: none;
+}
+#result{
+	width: 100%;
+	min-height: 300px;
+	margin-bottom: 100px;
+}
+.buttons{
+	position: absolute;
+	left: 10%;
+	top: 35%;
+}
+
+
+/*preloader*/
+#preloader {
+  background: linear-gradient(90deg, #FF4E50 10%, #F9D423 90%);
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom:0;
+  z-index: 100000;
+}
+#pre{
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+}
+#pre:before,
+#pre:after {
+  content: "";
+  height: 40px;
+  width: 40px;
+  border: 8px solid rgba(255,255,255,.5);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+}
+#pre:before {
+  animation: animate 2s infinite linear;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0) skew(0);
+  }
+  
+  100% {
+    transform: rotate(180deg) skew(360deg);
+  }
+}
+.prePreloader:after {
+  animation: animate2 2s infinite linear;
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(0) skew(0);
+  }
+  
+  100% {
+    transform: rotate(-180deg) skew(-360deg);
+  }
+}
+
+/*xxxxxxx*/
+/*body {
+   background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/classy_fabric.png');
+}
+
+.view {
+   position: relative;
+   width: 456px;
+   height: 300px;
+   margin: 60px auto 0;
+   border-radius: 30px;
+   box-shadow: inset 0 -2px 1px 0 rgba(255,255,255,.16), inset 0 0 0 2px rgba(0,0,0,.2);
+   transform-style: preserve-3d;
+   transform: perspective(1000px);
+   cursor: pointer;
+}
+
+.slice {
+   display: block;
+   position: absolute;
+   left: 0;
+   width: 100%;
+   height: 100px;
+   box-sizing: border-box;
+   border: 10px solid #e8e3da;
+   background: white;
+   background-size: 100%;
+   background-repeat: no-repeat;
+   transition: filter .1s linear;
+   z-index: 10;
+   text-align: center;
+   font-size: 30px;
+   line-height: 100px;
+}
+
+#one {
+   top: 0;
+   border-bottom: none;
+   border-top-left-radius: 30px;
+   border-top-right-radius: 30px;
+   background-position: 0 0;
+}
+
+#two {
+   top: 100px;
+   border-top: none;
+   border-bottom: none;
+   background-position: 0 -90px;
+}
+
+#three {
+   top: 200px;
+   border-top: none;
+   border-bottom-left-radius: 30px;
+   border-bottom-right-radius: 30px;
+   background-position: 0 -190px;
+}
+
+.shadow {
+   position: absolute;
+   top: 5px;
+   left: 0;
+   width: 100%;
+   height: 300px;
+   background: black;
+   border-radius: 30px;
+   opacity: .5;
+   filter: blur(5px);
+}
+
+.view:hover .shadow {
+   left: -3px;
+   width: 462px;
+   height: 150px;
+   filter: blur(7px);
+   opacity: 1;
+}
+
+
+.view:hover #one {
+   transform-origin: 50% 0%;
+   animation-name: first;
+   animation-duration: 200ms;
+   animation-iteration-count: 1;
+   animation-play-state: play;
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+   filter: brightness(104%);
+}
+
+.view:hover #two {
+   transform-origin: 50% 100%;
+   animation-name: second;
+   animation-duration: 200ms;
+   animation-iteration-count: 1;
+   animation-play-state: play;
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+   filter: brightness(60%);
+}
+
+.view:hover #three {
+   transform-origin: 50% 0%;
+   animation-name: third;
+   animation-duration: 200ms;
+   animation-iteration-count: 1;
+   animation-play-state: play;
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+   filter: brightness(104%);
+}
+
+@keyframes first {
+   0% {
+      transform: none;
+   }
+   95% {
+      transform: rotateX(60deg);
+   }
+   100% {
+      transform: rotateX(60deg);
+   }
+}
+
+@keyframes second {
+   0% {
+      top: 100px;
+      transform: none;
+   }
+   95% {
+      top: 18px;
+      transform: rotateX(-45deg);
+   }
+   100% {
+      top: 1px;
+      transform: rotateX(-59deg);
+   }
+}
+
+@keyframes third {
+   0% {
+      top: 200px;
+      transform: none;
+   }
+   95% {
+      top: 121px;
+      transform: rotateX(60deg);
+   }
+   100% {
+      top: 99px;
+      transform: rotateX(60deg);
+   }
+}
+
+
+*/

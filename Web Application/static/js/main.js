@@ -1,6 +1,6 @@
 (function(){
-	
-	$('#area').on('input', function (event) {
+
+		$('#area').on('input', function (event) {
 	 	var text = event.target.value;
 	 	var sentences = text.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
 	 	var amountOfSentences = sentences.length;

@@ -39,9 +39,17 @@ class RegisterForm(FlaskForm):
     password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)],render_kw={"placeholder":"Password"})
 
 
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
+from flask_login import current_user
+
 @app.route('/')
-def index():
-    return render_template('dashboard.html')
+def main_route():
+    if current_user.is_authenticated:
+         return render_template("index_for_user.html")
+    else:
+         return render_template("index_for_anonymous.html")
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -53,7 +61,7 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('index'))
 
         return '<h1>Invalid username or password</h1>'
         #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
@@ -84,17 +92,12 @@ def signup():
     return render_template('signup.html', form=form)
 
 
-@app.route('/dashboard')
-@login_required
-def dashboard():
-    return render_template('dashboard.html', name=current_user.username)
-
 
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('index_for_anonymous'))
 
 
 if __name__ == '__main__':
