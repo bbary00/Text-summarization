@@ -13,12 +13,15 @@ Sign Up
 {% block content %}
 <div class="container">
 
-  <form class="box one-edge-shadow" method="POST" action="/signup">
+  <form class="box one-edge-shadow was-validated" method="POST" action="/signup">
     <h2>Sign Up</h2>
     {{ form.hidden_tag() }}
     {{ form.username(class_="user")  }}
     {{ form.email(class_="email") }}
     {{ form.password }}
+    {% for error in form.password.errors %}
+      <p style="color:white;">{{ error }}</p>
+    {% endfor %}
     <button class="btn" type="submit">Sign Up</button>
   </form>
 

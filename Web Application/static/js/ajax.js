@@ -10,10 +10,10 @@ $(document).ready(function() {
 			type : 'POST',
 			url : '/summarization'
 		})
-		.done(function(data) {
+		.done(function(summary) {
+		    document.getElementById("result").value = summary;
 			$(".res").show();
 			$(window).scrollTop($(".res").offset().top);
-		    document.getElementById("result").value = data;
 
 		});
 
