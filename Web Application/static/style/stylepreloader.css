@@ -1,0 +1,221 @@
+
+#preloader {
+  background: linear-gradient(90deg, #536976, #292E49);
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom:0;
+  z-index: 100000;
+}
+
+.view {
+  position: relative;
+  width: 150px;
+  margin:300px auto;
+  border-radius: 30px;
+  box-shadow: inset 0 -2px 1px 0 rgba(255,255,255,.16), inset 0 0 0 2px rgba(0,0,0,.2);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  cursor: pointer;
+}
+
+.slice {
+   display: block;
+   position: absolute;
+   left: 0;
+   width: 150px;
+   height: 50px;
+   box-sizing: border-box;
+   background: white;
+   background-size: 100%;
+   background-repeat: no-repeat;
+   transition: filter .1s linear;
+   z-index: 10;
+   font-size: 10px;
+   line-height: 10px;
+}
+
+#one {
+   top: 0;
+   border-bottom: none;
+   background-position: 0 0;
+}
+
+#two {
+   top: 50px;
+   border-top: none;
+   border-bottom: none;
+   background-position: 0 -90px;
+}
+
+#three {
+   top: 100px;
+   border-top: none;
+   background-position: 0 -190px;
+}
+
+.view #one {
+  animation-delay: 1s;
+   transform-origin: 50% 0%;
+   animation-name: first;
+   animation-duration: 500ms;
+   animation-play-state: play;
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+   filter: brightness(104%);
+}
+
+.view #two{
+  animation-delay: 1s;
+   transform-origin: 50% 100%;
+   animation-name: second;
+   animation-duration: 500ms;
+   animation-play-state: play;
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+   /*filter: brightness(60%);*/
+}
+
+.view #three {
+  animation-delay: 1s;
+   transform-origin: 50% 0%;
+   animation-name: third;
+   animation-duration: 850ms;
+   animation-play-state: play;
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+   filter: brightness(104%);
+}
+
+@keyframes first {
+   0% {
+      top:0px;
+      transform: none;
+   }
+   95% {
+      top:45px;
+      transform: rotateX(60deg);
+   }
+   100% {
+      top:50px;
+      transform: rotateX(60deg);
+   }
+}
+
+@keyframes second {
+   0% {
+      top: 50px;
+      transform: none;
+   }
+   95% {
+      filter: brightness(60%);
+      top: 50px;
+      transform: rotateX(-15deg);
+   }
+   100% {
+      top: 50px;
+      transform: rotateX(-59deg);
+      filter: brightness(60%);
+   }
+}
+
+@keyframes third {
+   0% {
+      transform: none;
+   }
+   95% {
+      transform: rotateX(60deg);
+   }
+   100% {
+      transform: rotateX(60deg);
+   }
+}
+
+
+#up{
+  background-image: url(https://t2.rbxcdn.com/98b2f31eab3d77c56b164069b05821fe);
+  height: 100px;
+  width: 250px;
+  position: absolute; 
+  left: calc(50% - 125px);
+  top:0;
+  animation-name: godown;
+  animation-duration: 2s;
+  animation-iteration-count:1;
+  animation-fill-mode: forwards;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+p{
+  margin: 0;
+}
+@keyframes godown{
+  0% {top:0px;}
+  100% {top:250px;}
+}
+
+#down{
+  background-image: url(https://t2.rbxcdn.com/98b2f31eab3d77c56b164069b05821fe);
+  height: 100px;
+  width: 350px;
+  position: absolute; 
+  top:470px;
+  left: calc(50% - 175px);
+   animation-name: goup;
+  animation-duration: 2s;
+  animation-iteration-count:1;
+  animation-timing-function:linear;
+  animation-fill-mode: forwards;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@keyframes goup{
+  0% {}
+  50%{top:450px;}
+  100% {top:430px;}
+}
+
+#center {
+   width: 600px;
+   height: 40px;
+   position: absolute;
+   left: 50%;
+   top: 650px; 
+   margin-left: -300px;
+   margin-top: -50px;
+   background: rgba(0,0,0,1);
+  border: 2px solid rgba(255,255,255,1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.2);
+}
+
+#main {
+  width: 200px;
+   height: 40px;
+  background: #92C81A;
+  float: left;
+  animation: stretch 2s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes stretch {
+  0% {width: 0px;}
+  20% {width: 120px;}
+  40% {width: 240px;}
+  60% {width: 360px;}
+  80% {width: 480px;}
+  100%{width: 600px;}
+}
+.count{
+ text-align: center;
+  font-weight: 100;
+  font-size: 30px;
+  margin-top: -1.33em;
+  color: white;
+  width: 100%;
+  position: absolute;
+  top:45px;
+}
+h1{
+  margin: 0;
+}

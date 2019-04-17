@@ -62,15 +62,20 @@
 				btn.disabled=false;
 			}
 		})
-
-		//ajax
-		$('#press').on('click', function(event) {
-			$(".res").show();
-			$(window).scrollTop($(".res").offset().top);
-			var data = $('#area').val();
-			document.getElementById("result").value = data;
-		});
 	})
-
+$(window).on('load', function () {
+	$preloader = $('#preloader'),
+	$preloader.delay(2000).fadeOut('slow');
+});
+$('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 2100,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
 }());
-// дивитися речення і якшо там 1 символ то сплітити його до наступного

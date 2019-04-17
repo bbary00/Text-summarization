@@ -8,9 +8,23 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style/style.css')}}">
 	<script src = "{{ url_for('static', filename='js/jquery.js')}}" ></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style/stylepreloader.css')}}">
+
 </head>
 <body>
-	<div class="preloader"></div>
+	<div id="preloader">
+	<div id="up"></div>
+	<div class="view">
+	   <span class="slice" id="one"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
+	   <span class="slice" id="two"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
+	   <span class="slice" id="three"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
+	</div>
+	<div id="down"></div>
+	<div id="center">
+  		<div id="main"></div>
+  		<h1 class="count">100</h1>
+	</div>
+</div>
 	<header>
 		<div class="fl-left">
 			<div class="buttons" style="left:0">
