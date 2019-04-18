@@ -73,7 +73,7 @@ def finding_sent(freq, sent):
     return ranking
 
 
-def summarize(path, sent):
+def summarize(path, sent, perc):
     """Main function to import"""
 
     data = get_text(path)
@@ -81,14 +81,15 @@ def summarize(path, sent):
     tokens, stemmed_sent = get_cleaned_words(token_sentences)
     main_tokens = word_evaluation(tokens)
     ranking = finding_sent(main_tokens, stemmed_sent)
-    n = int(sent)
-    # p = int(perc)
-    # p = len(token_sentences) * p // 100
-    s_idx = ranking[:n]
-    # s_idx_p = nlargest(p, ranking, key=ranking.get)
-    # print(s_idx)
-    summary = [token_sentences[i] for i in sorted(s_idx)]
-    # summary = [token_sentences[j] for j in sorted(s_idx_p)]
+    if not perc:
+        n = int(sent)
+        s_idx = ranking[:n]
+        summary = [token_sentences[i] for i in sorted(s_idx)]
+    else:
+        p = int(perc)
+        p = len(token_sentences) * p // 100
+        s_idx_p = ranking[:p]
+        summary = [token_sentences[j] for j in sorted(s_idx_p)]
     s = '\n'.join(summary)
     # print(' '.join(summary))
     return s

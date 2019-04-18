@@ -100,16 +100,17 @@ def login():
 
 @app.route('/summarization', methods=['POST'])
 def summary():
-    user_id = current_user
+    # user_id = current_user
     data = request.form['text']
-    new_text = Text(text=data, user=user_id)
-    db.session.add(new_text)
-    db.session.commit()
+    # new_text = Text(text=data, user=user_id)
+    # db.session.add(new_text)
+    # db.session.commit()
     sent = request.form['sentence']
-    summ = summarize(data, sent)
-    new_summary = Summary(sum=summ, user=user_id, text=new_text)
-    db.session.add(new_summary)
-    db.session.commit()
+    perc = request.form['percentage']
+    summ = summarize(data, sent, perc)
+    # new_summary = Summary(sum=summ, user=user_id, text=new_text)
+    # db.session.add(new_summary)
+    # db.session.commit()
     return jsonify(summ)
 
 

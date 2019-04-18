@@ -5,6 +5,7 @@
 	<title>Press</title>
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style/style.css')}}">
 	<script src = "{{ url_for('static', filename='js/jquery.js')}}" ></script>
@@ -32,7 +33,7 @@
 			</div>
 		</div>
 		<a href="#" class="badge badge-danger"><h1>Press</h1></a>
-		<div class="fl-right">
+		<div class="fl-right languages">
 			<button class="translate" id="en"><img src="{{ url_for('static', filename='images/UK.png')}}" alt=""></button>
 			<button class="translate" id="ua"><img src="{{ url_for('static', filename='images/UA.png')}}" alt=""></button>
 		</div>	
@@ -45,7 +46,8 @@
 		<textarea class="form-control"name="" id="area" ></textarea>
 		<div class="string">
 			<div class="block sentence">
-				<p class="lang" key="sent" id="sent">Sentence</p>
+				<p class="lang" key="sent" id="sent">Sentence
+				<a href="#"><i class="fas fa-chevron-circle-right fl-right" id="right"></i></a></p>
 				<form class="was-validated">
 					<div class="form-group" id="form-group">
 		    			<select class="custom-select" id="form" required >
@@ -54,6 +56,11 @@
     					<div class="invalid-feedback lang" key="required">Required</div>
   					</div>
 				</form>
+			</div>
+			<div class="block percentage">
+				<p class="lang" key="perc" id="perc"><a href="#"><i class="fas fa-chevron-circle-left fl-left" id="left"></i></a>Percentage</p>
+				<input type="range" class="custom-range" min="5" max="95" step="5" id="range">
+				<p id="rangeValue"></p>
 			</div>
 		</div>
 		<button type="button" class="btn btn-outline-success" id="press" disabled>PRESS</button>
