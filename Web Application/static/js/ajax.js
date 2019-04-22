@@ -5,7 +5,7 @@ $(document).ready(function() {
 	    var sent = $('#form').val();
 	    var rangeValue = document.getElementById("rangeValue");
         if(rangeValue.innerHTML === undefined || rangeValue.innerHTML == ""){
-            range = null
+            range = null;
         }else{
             range = $('#range').val();
             sent = null;
@@ -14,7 +14,7 @@ $(document).ready(function() {
 			data : {
 				text : $('#area').val(),
 				sentence : sent,
-				percentage : perc
+				percentage : range
 			},
 			type : 'POST',
 			url : '/summarization'

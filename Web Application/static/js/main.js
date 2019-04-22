@@ -117,4 +117,17 @@
             plusDivs(1);
             btn.disabled=true;
         })
+        // clear
+        var clear = document.getElementById("clear");
+        clear.addEventListener('click',function(event){
+            document.getElementById("area").value="";
+        })
+
+        // copy
+        var copy = document.getElementById("copy");
+        copy.addEventListener('click',function(event){
+            var text = document.getElementById("result");
+            text.select();
+            document.execCommand('copy');
+        })
 }());
