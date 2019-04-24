@@ -28,6 +28,7 @@ header{
 	display:block;
 	height: 70px;
 	width: 70px;
+	position:absolute;
 }
 .logo{
 	display: inline-block;
@@ -146,7 +147,7 @@ h2{
 }
 .buttons{
 	position: absolute;
-	left: 0%;
+	left: 100px;
 	top: 35%;
 }
 .fas{

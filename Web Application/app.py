@@ -69,7 +69,7 @@ class RegisterForm(FlaskForm):
                            render_kw={"placeholder":"Username"})
     password = PasswordField('password', validators=[InputRequired(),
                                                      Length(min=8, max=80,
-                                                            message='HUY')],
+                                                            message='Invalid password')],
                              render_kw={"placeholder":"Password"})
 
 
