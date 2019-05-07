@@ -1,1 +1,4 @@
 venv
+config.cfg
+core_engine
+*.txt

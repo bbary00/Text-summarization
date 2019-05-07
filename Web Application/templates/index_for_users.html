@@ -27,17 +27,14 @@
 </div>
 	<header>
 		<div class="fl-left">
-			<a href="profile.html" class="logo"><img src="{{ url_for('static', filename='images/user.png')}}" alt="profile"></a>
-			<div class="buttons">
-				<form action="/logout"><button>Logout</button></form>
-			</div>
+			<a href="{{ url_for('profile') }}" class="logo"><img src="{{ url_for('static', filename='images/user.png')}}" alt="profile"></a>
+			<!--<div class="buttons">-->
+				<!--<form action="/logout"><button>Sign out</button></form>-->
+			<!--</div>-->
 
 		</div>
 		<a href="#" class="badge badge-danger"><h1>Press</h1></a>
-		<!--<div class="fl-right languages">-->
-			<!--<button class="translate" id="en"><img src="{{ url_for('static', filename='images/UK.png')}}" alt=""></button>-->
-			<!--<button class="translate" id="ua"><img src="{{ url_for('static', filename='images/UA.png')}}" alt=""></button>-->
-		<!--</div>-->
+
 	</header>
 	<div class="clear"></div>
 	<!-- header -->

@@ -1,5 +1,4 @@
-Open command line
-cd ../Text-summarization/Web Application 
+cd Text-summarization
 source venv/bin/activate
-cd ../..
-python.exe init.py
+cd "Web Application"
+python app.py

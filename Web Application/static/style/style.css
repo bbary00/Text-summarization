@@ -20,7 +20,8 @@ header{
 	text-align: center;
 	padding: 10px;
 	min-height: 100px;
-	width: 100%;
+	width: calc(100% - 200px);
+	margin: auto;
 	position: relative;
 }
 
@@ -147,7 +148,6 @@ h2{
 }
 .buttons{
 	position: absolute;
-	left: 100px;
 	top: 35%;
 }
 .fas{

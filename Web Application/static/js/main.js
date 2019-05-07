@@ -2,7 +2,7 @@
 
 		$('#area').on('input', function (event) {
             var text = event.target.value;
-            var sentences = text.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
+            var sentences = text.replace(/([.?!])\s*(?=[A-ZА-Я])/g, "$1|").split("|");
             var amountOfSentences = sentences.length;
             var lastLetter;
             for(var i = 0;i<sentences.length;i++){
@@ -124,7 +124,7 @@
         })
 
         // copy
-        var copy = document.getElementById("copy");
+        var copy = document.getElementById("tip");
         copy.addEventListener('click',function(event){
             var text = document.getElementById("result");
             text.select();
