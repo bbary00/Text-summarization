@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Press</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -27,14 +28,14 @@
 </div>
 	<header>
 		<div class="fl-left">
-			<a href="{{ url_for('profile') }}" class="logo"><img src="{{ url_for('static', filename='images/user.png')}}" alt="profile"></a>
+			<a href="{{ url_for('profile') }}" class="logo"><img id="profile" src="{{ url_for('static', filename='images/user.png')}}" alt="profile"></a>
 			<!--<div class="buttons">-->
 				<!--<form action="/logout"><button>Sign out</button></form>-->
 			<!--</div>-->
 
 		</div>
 		<a href="#" class="badge badge-danger"><h1>Press</h1></a>
-
+		<div class="toggle"></div>
 	</header>
 	<div class="clear"></div>
 	<!-- header -->
@@ -63,9 +64,9 @@
 		</div>
 		<button type="button" class="btn btn-outline-success" id="press" disabled>PRESS</button>
 		<div class="res">
-			<h2 class="lang" key="result">Result<a href="#result"><span copied="copy to clipboard" id="tip"><i class="far fa-copy fas" id="copy">
-			</i></span></a></h2>
-			<textarea class="form-control"name="" id="result" ></textarea>
+			<h2 class="lang" key="result">Result<a href="#result" ><span saved="save to cabinet" id="saved"><i class="far fa-save" id="save"><span class="tooltiptext" id="tooltip">Saved</span></i></span><span copied="copy to clipboard" id="tip"><i class="far fa-copy fas" id="copy">
+      </i></span></a></h2>
+			<textarea class="form-control" name="" id="result" readonly = "readonly" ></textarea>
 		</div>
 	</div>
 

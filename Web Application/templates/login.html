@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
@@ -20,6 +21,25 @@ Login
         {{ form.password }}
         {{ wtf.form_field(form.remember) }}
         <button class="btn" type="submit">Sign in</button>
+
+        {% for field in form.errors %}
+          {% for error in form.errors[field] %}
+            <div class="alert alert-error" style="color: white; padding: 0; margin-bottom: 0;">
+                <strong style="color : red">Error!  </strong>{{error}}
+            </div>
+          {% endfor %}
+        {% endfor %}
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-error" style="color: white; padding: 0; margin-bottom: 0;">
+                <strong style="color : red">Error!  </strong>{{message}}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
           <p><a href="{{ url_for('signup') }}">or sign up</a></p>
       </form>
 

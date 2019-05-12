@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
+
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
@@ -19,7 +21,15 @@ Sign Up
     {{ form.username(class_="user")  }}
     {{ form.email(class_="email") }}
     {{ form.password }}
+      {{ form.confirm }}
     <button class="btn" type="submit">Sign Up</button>
+    {% for field in form.errors %}
+    {% for error in form.errors[field] %}
+        <div class="alert alert-error" style="color: white; padding: 0; margin-bottom: 0;">
+            <strong style="color : red">Error!  </strong>{{error}}
+        </div>
+    {% endfor %}
+    {% endfor %}
   </form>
 
 </div> <!-- /container -->

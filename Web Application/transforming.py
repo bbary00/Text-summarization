@@ -17,13 +17,18 @@ def get_sent(text):
     return sentences
 
 
-def get_cleaned_words(text):
+def get_cleaned_words(text, lang):
     """Tokenize text into words(tokens)
      and clean them from punctuation marks and stopwords"""
-
-    with open('stopwords/ukrainian.txt', 'r') as f:
+    # if lang == 'false':
+    with open('stopwords/english.txt', 'r') as f:
         f.readline()
         stopwords = f.read().split()
+    # else:
+    #     with open('stopwords/english.txt', 'r') as f:
+    #         print('ENGLISH')
+    #         stopwords = f.read().split()
+    #         print(stopwords)
     with open('stopwords/punct.txt', 'r') as f:
         f.readline()
         punct = f.read().split()
@@ -34,29 +39,31 @@ def get_cleaned_words(text):
     from nltk.tokenize import word_tokenize
     for sent in text:
         sent_list = []
-        for word in word_tokenize(sent.lower()):
-            stemmed = stem(word)
+        token_sent = word_tokenize(sent.lower())
+        for word in token_sent:
             if word not in stopwords and word[0] not in punct and word[-1] \
                     not in punct:
-                cleaned_words.append(word)
+                stemmed = stem(word)
+                cleaned_words.append(stemmed)
                 sent_list.append(stemmed)
         stemmed_sent.append(sent_list)
     return [cleaned_words, stemmed_sent]
 
 
 def word_evaluation(words):
+
     """Construct a frequency distribution of words"""
 
     from collections import Counter
     d = dict(sorted(dict(Counter(words)).items(), key=lambda x: x[1],
                     reverse=True))
-
     n = list(d.keys())
-    n = [stem(token) for token in n[:20]]
-    return n
+    k_words = max(min(20, len(n)), len(n) // 100)
+    return n[:k_words]
 
 
 def finding_sent(freq, sent):
+
     """Evaluation of sentences and finding most valuable"""
 
     from collections import defaultdict
@@ -70,12 +77,13 @@ def finding_sent(freq, sent):
     return ranking
 
 
-def summarize(path, sent, perc):
-    """Main function to import"""
+def summarize(path, sent, perc, lang):
+
+    """Main function to call"""
 
     data = get_text(path)
     token_sentences = get_sent(data)
-    tokens, stemmed_sent = get_cleaned_words(token_sentences)
+    tokens, stemmed_sent = get_cleaned_words(token_sentences, lang)
     main_tokens = word_evaluation(tokens)
     ranking = finding_sent(main_tokens, stemmed_sent)
     if not perc:
@@ -95,4 +103,4 @@ def summarize(path, sent, perc):
 # if __name__ == '__main__':
 #     with open('test.txt', 'r', encoding='utf-8', errors='ignore') as f:
 #         text = f.read()
-#     print(summarize(text, 4))
+#     print(summarize(text, 4, 0, 'false'))

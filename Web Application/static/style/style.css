@@ -4,6 +4,7 @@
 body{
 	padding:0 80px 0;
 	background: #eee;
+	transition:0.5s;
 }
 header h1{
 	font-family: 'Indie Flower', cursive;
@@ -44,11 +45,7 @@ header{
 .fl-right{
 	float: right;
 }
-.languages{
-	position: absolute;
-	top:10px;
-	right: 100px;
-}
+
 .badge-danger{
 	background-color: #9c35dc;
 }
@@ -70,18 +67,7 @@ h2{
 	margin: 0 0 10px;
 	position: relative;
 }
-.translate img{
-	height: 25px;
-}
 
-.translate {
-	background-color:  #eee;
-	border:none;
-	outline: none;
-	display: inline-block;
-	cursor: pointer;
-
-}
 .logo img:hover{
    transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
@@ -189,4 +175,180 @@ span[copied]:hover::after {
   color: #000000;
   font-size: 14px;
   z-index: 1;
+}
+
+ul{
+	list-style: none;
+	width: 300px;
+    margin: auto;
+    padding-left: 50px;
+    margin-bottom:10px;
+    margin-top:10px;
+    text-align: left;
+}
+li::before{
+	content: "\2022";
+	color: #2BFD02;
+	display: inline-block;
+	width: 1em;
+  	margin-left: -1em;
+}
+#save{
+    margin: 5px 10px 0;
+	position: absolute;
+    right:60px;
+}
+span[saved]:hover::after {
+  content: attr(saved);
+  position: absolute;
+  right: 10px;
+  top: 24px;
+  min-width: 200px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #ffffcc;
+  padding: 12px;
+  color: #000000;
+  font-size: 14px;
+  z-index: 1;
+}
+.toggle{
+    box-sizing:content-box;
+    float: right;
+    background:#fff;
+    border:2px solid #9c35dc;
+    height:20px;
+    width:45px;
+    position:absolute;
+    top:40px;
+    right:10px;
+    cursor:pointer;
+    border-radius:20px;
+    transition:0.5s;
+}
+.toggle:before{
+    content:'';
+    position:absolute;
+    top:2px;
+    left:2px;
+    width:16px;
+    height:16px;
+    background:#9c35dc;
+    border-radius:50%;
+    transition:0.5s;
+}
+.toggle.active:before{
+    left:27px;
+    background:#fff;
+
+}
+.toggle.active{
+    background:#232729;
+    border:2px solid #fff;
+}
+body.night{
+    background:#232729;
+}
+body.night textarea{
+    background:#33393b;
+    color:white;
+    border-color:#33393b;
+    box-shadow:0 0 15px 2px #fff;
+}
+body.night .form-control:focus{
+    background:#33393b;
+    color:white;
+    border-color:#33393b;
+    box-shadow:0 0 15px 2px #fff;
+}
+body.night h2{
+    background:#465055;
+    box-shadow:0 0 15px 2px #fff;
+}
+a.night{
+    background-color:#465055;
+    box-shadow:0 0 15px 2px #fff;
+}
+a.night.badge-danger[href]:hover{
+    background-color:#535252;
+}
+a.night.badge-danger[href]:focus{
+    background-color:#465055;
+}
+body.night p{
+    background:#465055;
+    box-shadow:0 0 15px 2px #fff;
+}
+img.night{
+    content:url(../images/usernight.png);
+}
+body.night .btn{
+    border-color:#465055;
+    color:#465055;
+}
+body.night .btn:hover{
+    background-color:#232729;
+    color:white;
+    border-color:#465055;
+}
+body.night .btn:disabled{
+    background-color:#232729;
+    border-color:#465055;
+    color:#465055;
+}
+body.night .btn:not(:disabled):not(.disabled){
+    box-shadow:0 0 15px 2px #fff;
+    color:white;
+}
+body.night .btn-outline-success:not(:disabled):not(.disabled):active{
+    border-color:#465055;
+    background-color:#465055;
+}
+body.night .btn-outline-success:not(:disabled):not(.disabled):active:focus{
+    box-shadow:0 0 15px 2px #fff;
+}
+body.night .btn-outline-success:not(:disabled):not(.disabled):hover{
+    background-color:white;
+    color:#465055;
+}
+.fa-save .tooltiptext {
+  visibility: hidden;
+  min-width: 150px;
+  background-color: #9c35dc;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -76px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size:15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fa-save .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+body.night .fa-save .tooltiptext {
+    color: white;
+    background:#465055;
+}
+
+.form-control[readonly]{
+      background:#33393b;
+    color:white;
+    border-color:#33393b;
+    box-shadow:0 0 15px 2px #fff;
 }

@@ -1,4 +1,0 @@
-cd Text-summarization
-source venv/bin/activate
-cd "Web Application"
-python app.py

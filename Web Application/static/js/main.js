@@ -12,7 +12,6 @@
                 }
             }
             var form = document.getElementById("form");
-            console.log(sentences);
 
             while (form.firstChild) {
                 form.removeChild(form.firstChild);
@@ -30,6 +29,7 @@
             option.className= "lang";
             option.setAttribute('key',"select");
             form.appendChild(option);
+
 
             for(var i = 1;i<=amountOfSentences;i++){
                 var option = document.createElement('option');
@@ -62,6 +62,23 @@
                     btn.disabled=false;
                    }
 		    })
+		    //Check if limit
+			var isLimited = !!($('#area').attr('maxLength'));
+			var area = document.getElementById('area');
+			var maxLength = 2000;
+			if(isLimited){
+				if(area.value.length >= maxLength){
+					Swal.fire({
+
+					  html: 'The limit of 2000 characters is exceeded.<br/></br><strong>Please register to use all advantages:</strong><br/><ul><li>Unlimited text</li><li>See your previous summaries</li><li>Custom your environment</li></ul><button type="button" class="swal2-confirm swal2-styled" aria-label style="display: inline-block; border-left-color: rgb(48, 133, 214); border-right-color: rgb(48, 133, 214);"><a href="signup" style="color:white;text-decoration:none">Sign up</a></button>',
+					  type: 'warning',
+					  showCancelButton: true,
+					  showConfirmButton:false,
+					  cancelButtonColor: '#d33',
+					  confirmButtonText: 'Sign up',
+					 })
+				}
+			}
 	    })
         $(window).on('load', function () {
 	        $preloader = $('#preloader'),
@@ -78,6 +95,7 @@
                 }
             });
         });
+
         // slider
         var btn = document.getElementById('press');
         var range = document.getElementById("range");
@@ -129,5 +147,13 @@
             var text = document.getElementById("result");
             text.select();
             document.execCommand('copy');
+        })
+
+        // day/night mode
+        $('.toggle').click(function(){
+            $('.toggle').toggleClass('active');
+            $('body').toggleClass('night');
+            $('.badge').toggleClass('night');
+            $('#profile').toggleClass('night');
         })
 }());
