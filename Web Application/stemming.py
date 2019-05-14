@@ -40,7 +40,7 @@ def ukstemmer_search_preprocess(word):
     return word
 
 
-def cut(st_part, reg, to):
+def cut(st_part, reg):
 
     """Find the biggest suffix in a given suffix group and cut it"""
 
@@ -81,38 +81,38 @@ def first_phase(start, end, word):
     Return new -end immediately after cutting.
     """
 
-    try_cut = cut(end, '[іи]сть$', '')
+    try_cut = cut(end, '[іи]сть$')
     if end != try_cut:
         end = try_cut
         return second_phase(start, end, word)
 
-    try_cut = cut(end, ends['adverb'], '')
+    try_cut = cut(end, ends['adverb'])
     if end != try_cut:
         end = try_cut
         return second_phase(start, end, word)
 
-    try_cut = cut(end, ends['infinitive'], '')
+    try_cut = cut(end, ends['infinitive'])
     if end != try_cut:
         end = try_cut
-        end = cut(end, ends['verb'], '')
+        end = cut(end, ends['verb'])
         return second_phase(start, end, word)
 
-    try_cut = cut(end, ends['adjective'], '')
-    if end != try_cut:
-        end = try_cut
-        return second_phase(start, end, word)
-
-    try_cut = cut(end, ends['participle'], '')
+    try_cut = cut(end, ends['adjective'])
     if end != try_cut:
         end = try_cut
         return second_phase(start, end, word)
 
-    try_cut = cut(end, ends['verb'], '')
+    try_cut = cut(end, ends['participle'])
     if end != try_cut:
         end = try_cut
         return second_phase(start, end, word)
 
-    try_cut = cut(end, ends['noun'], '')
+    try_cut = cut(end, ends['verb'])
+    if end != try_cut:
+        end = try_cut
+        return second_phase(start, end, word)
+
+    try_cut = cut(end, ends['noun'])
     if end != try_cut:
         end = try_cut
         return second_phase(start, end, word)
@@ -127,8 +127,8 @@ def second_phase(start, end, word):
     Try to cut prefix.
     """
 
-    cut(end, ends['vowel_end'], '')
-    cut(end, 'нн$', u'н')
+    cut(end, ends['vowel_end'])
+    end = re.sub(r'нн', 'н', end)
     if len(start + end) < 3:
         return word
     stem = start + end

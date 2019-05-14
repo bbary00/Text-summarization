@@ -1,12 +1,6 @@
 ﻿from string import punctuation
+from langdetect import detect
 from stemming import stem
-
-
-def get_text(path):
-    """Read text from .txt file"""
-
-    text = path
-    return text
 
 
 def get_sent(text):
@@ -17,23 +11,26 @@ def get_sent(text):
     return sentences
 
 
-def get_cleaned_words(text, lang):
+def get_cleaned_words(text):
     """Tokenize text into words(tokens)
      and clean them from punctuation marks and stopwords"""
-    # if lang == 'false':
-    with open('stopwords/english.txt', 'r') as f:
-        f.readline()
-        stopwords = f.read().split()
-    # else:
-    #     with open('stopwords/english.txt', 'r') as f:
-    #         print('ENGLISH')
-    #         stopwords = f.read().split()
-    #         print(stopwords)
+
+    try:
+        lang = detect(str(text))
+    except Exception:
+        lang = 'uk'
+    if lang == 'uk':
+        with open('stopwords/ukrainian.txt', 'r') as f:
+            f.readline()
+            stop_words = f.read().split()
+    else:
+        with open('stopwords/english.txt', 'r') as f:
+            stop_words = f.read().split()
     with open('stopwords/punct.txt', 'r') as f:
         f.readline()
         punct = f.read().split()
     punct += list(punctuation)
-    stopwords = set(stopwords + punct)
+    stopwords = set(stop_words + punct)
     cleaned_words = []
     stemmed_sent = []
     from nltk.tokenize import word_tokenize
@@ -77,13 +74,12 @@ def finding_sent(freq, sent):
     return ranking
 
 
-def summarize(path, sent, perc, lang):
+def summarize(data, sent, perc):
 
     """Main function to call"""
 
-    data = get_text(path)
     token_sentences = get_sent(data)
-    tokens, stemmed_sent = get_cleaned_words(token_sentences, lang)
+    tokens, stemmed_sent = get_cleaned_words(token_sentences)
     main_tokens = word_evaluation(tokens)
     ranking = finding_sent(main_tokens, stemmed_sent)
     if not perc:
@@ -99,8 +95,7 @@ def summarize(path, sent, perc, lang):
     return s
 
 
-#
 # if __name__ == '__main__':
-#     with open('test.txt', 'r', encoding='utf-8', errors='ignore') as f:
+#     with open('Potter.txt', 'r', encoding='utf-8', errors='ignore') as f:
 #         text = f.read()
-#     print(summarize(text, 4, 0, 'false'))
+#     print(summarize(text, 10, 0))

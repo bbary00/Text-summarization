@@ -10,15 +10,11 @@ $(document).ready(function() {
             range = $('#range').val();
             sent = null;
         }
-		var isEnglish = function (text) {
-            return /[a-z]/i.test(text);
-        }
 		$.ajax({
 			data : {
 				text : $('#area').val(),
 				sentence : sent,
 				percentage : range,
-				lang : isEnglish($('#area').val())
 			},
 			type : 'POST',
 			url : '/summarization'

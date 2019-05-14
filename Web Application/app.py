@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import render_template, redirect, url_for, request, jsonify, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, login_required, \
@@ -35,6 +36,9 @@ def main_route():
 @app.route('/profile')
 def profile():
     """Return user's cabinet"""
+
+    if not current_user.is_authenticated:
+        return login()
     return render_template("profile.html")
 
 
@@ -50,7 +54,7 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
             if check_password_hash(user.password, form.password.data):
-                login_user(user, remember=form.remember.data)
+                login_user(user)
                 return redirect(url_for('main_route'))
             else:
                 flash("Password is wrong.")
@@ -89,8 +93,7 @@ def summary():
     data = request.form['text']
     sent = request.form['sentence']
     perc = request.form['percentage']
-    lang = request.form['lang']
-    summ = summarize(data, sent, perc, lang)
+    summ = summarize(data, sent, perc)
     total_words_text = str(len(data.split()))
     total_words_summary = str(len(summ.split()))
     if current_user.is_authenticated:
@@ -137,8 +140,9 @@ def get_db_info():
         last_10[str(i)] = summ_data[-i].sum
 
     user_saved_data = dict()
-    for i in range(len(saved_data)):
-        user_saved_data[saved_data[i].text] = saved_data[i].summary
+    saved_len = len(saved_data)
+    for i, obj in enumerate(saved_data):
+        user_saved_data[saved_len - i] = {obj.summary: obj.text}
 
     to_write = {
         "page_data": page_data,

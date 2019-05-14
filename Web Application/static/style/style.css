@@ -283,7 +283,7 @@ img.night{
     content:url(../images/usernight.png);
 }
 body.night .btn{
-    border-color:#465055;
+
     color:#465055;
 }
 body.night .btn:hover{
@@ -323,7 +323,7 @@ body.night .btn-outline-success:not(:disabled):not(.disabled):hover{
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -76px;
+  margin-left: -80px;
   opacity: 0;
   transition: opacity 0.3s;
   font-size:15px;
@@ -340,15 +340,19 @@ body.night .btn-outline-success:not(:disabled):not(.disabled):hover{
   border-style: solid;
   border-color: #555 transparent transparent transparent;
 }
-
 body.night .fa-save .tooltiptext {
-    color: white;
+    color:white;
     background:#465055;
 }
-
-.form-control[readonly]{
-      background:#33393b;
+body.night .was-validated,body.night .custom-select{
+    background:#33393b;
     color:white;
-    border-color:#33393b;
-    box-shadow:0 0 15px 2px #fff;
+}
+
+body.night .form-control[readonly]{
+    background:#33393b;
+}
+
+.badge-danger[href]:focus{
+    background-color:#9c35dc;
 }

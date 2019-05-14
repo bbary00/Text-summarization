@@ -1,88 +1,123 @@
-(function(){
+$(window).ready(function() {
+    $.ajax({
+            data: {},
+            type: 'POST',
+            url: '/db_info'
+        })
+        .done(function(data) {
+            var list = document.getElementById('list');
+            var listSaved = document.getElementById('list-saved');
+            var username = document.getElementById("username");
+            var time = document.getElementById("time");
+            var words = document.getElementById("words");
 
-		$('#area').on('input', function (event) {
-            var text = event.target.value;
-            var sentences = text.replace(/([.?!])\s*(?=[A-ZА-Я])/g, "$1|").split("|");
-            var amountOfSentences = sentences.length;
-            var lastLetter;
-            for(var i = 0;i<sentences.length;i++){
-                lastLetter = sentences[i][sentences[i].length-2];
-                if(lastLetter==lastLetter.toUpperCase() && sentences[i].length<3){
-                    amountOfSentences-=1;
-                }
-            }
-            var form = document.getElementById("form");
-            console.log(sentences);
+           var pageData = data["page_data"];
+           var savedData = data["saved_data"];
+           var last10 = data["last_10"];
 
-            while (form.firstChild) {
-                form.removeChild(form.firstChild);
-            }
-            option = document.createElement('option');
-            option.setAttribute('value','');
-            option.setAttribute('disabled',"");
-            var sent = document.getElementById("sent");
-            if(sent.innerHTML=="Речення"){
-                option.innerHTML ="Виберіть кількість речень";
-            }else{
-                option.innerHTML = "Select the number of sentences";
-            }
-            option.setAttribute('selected',"");
-            option.className= "lang";
-            option.setAttribute('key',"select");
-            form.appendChild(option);
+           for(var key in last10){
+               var icon1 = document.createElement('i');
+               icon1.setAttribute('class', "far fa-copy fas copy");
+               icon1.addEventListener('click', function(event) {
+                   this.previousElementSibling.select();
+                   document.execCommand('copy');
+               })
+               var textarea = document.createElement('textarea');
+               textarea.setAttribute('class', 'form-control');
+               textarea.setAttribute('readonly', 'readonly');
+               textarea.value = last10[key];
+               var li = document.createElement('li');
+               li.appendChild(textarea);
+               li.appendChild(icon1);
+    //           list.insertBefore(li, list.firstChild);
+               list.appendChild(li);
+           }
 
-            for(var i = 1;i<=amountOfSentences;i++){
-                var option = document.createElement('option');
-                option.setAttribute('value',i);
-                option.innerHTML=i;
-                form.appendChild(option);
-            }
-            if(sentences==0){
-                form.removeChild(form.firstChild);
-                form.removeChild(form.firstChild);
-                option = document.createElement('option');
-                option.setAttribute('value','');
-                option.setAttribute('disabled',"");
-                if(sent.innerHTML=="Речення"){
-                    option.innerHTML ="Виберіть кількість речень";
-                }else{
-                    option.innerHTML = "Select the number of sentences";
-                }
-                option.setAttribute('selected',"");
-                option.className= "lang";
-                option.setAttribute('key',"select");
-                form.appendChild(option);
+           username.innerHTML =pageData["user_name"];
+           time.innerHTML = "Saved time<br/>" + pageData["saved_time"];
+           words.innerHTML = "Saved words<br/>" + pageData["saved_words"];
 
-            }
 
-            var btn = document.getElementById('press');
-            btn.disabled=true;
-            form.addEventListener('change',function(){
-                if(!isNaN(form.value)){
-                    btn.disabled=false;
-                   }
-		    })
+           for(let [key, value] of Object.entries(savedData)){
+                var icon1 = document.createElement('i');
+                icon1.setAttribute('class', "far fa-copy fas copy");
+                icon1.addEventListener('click', function(event) {
+                    this.previousElementSibling.select();
+                    document.execCommand('copy');
+                });
+                var icon2 = document.createElement('i');
+                icon2.setAttribute("class", "fas fa-angle-right angle");
 
-        //Check if limit
-              var isLimited = !!($('#area').attr('maxLength'));
-              var area = document.getElementById('area');
-              var maxLength = 2000;
-              if(isLimited){
-                if(area.value.length >= maxLength){
-                  Swal.fire({
-                    html: 'The limit of 2000 characters is exceeded.<br/></br><strong>Please register to use all advantages:</strong><br/><ul><li>Unlimited text</li><li>See your previous summaries</li><li>Custom your environment</li></ul><button type="button" class="swal2-confirm swal2-styled" aria-label style="display: inline-block; border-left-color: rgb(48, 133, 214); border-right-color: rgb(48, 133, 214);"><a href="signup" style="color:white;text-decoration:none">Sign up</a></button>',
-                    type: 'warning',
-                    showCancelButton: true,
-                    showConfirmButton:false,
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Sign up',
-                   })
-                }
-              }
-	    })
-        $(window).on('load', function () {
+
+                var text = document.createElement('textarea');
+                text.setAttribute('class', 'form-control falling');
+                text.setAttribute('readonly', 'readonly');
+                text.value = Object.values(value)[0];
+                text.style.display = "none";
+                icon2.addEventListener('click', function(event) {
+                    var trigger = this.classList.contains("fa-angle-right");
+                    if (trigger) {
+                        this.removeAttribute("class");
+                        this.setAttribute("class", "fas fa-angle-down angle");
+                        this.parentElement.nextElementSibling.style.display = "block";
+                    } else {
+                        this.removeAttribute("class");
+                        this.setAttribute("class", "fas fa-angle-right angle");
+                        this.parentElement.nextElementSibling.style.display = "none";
+                    }
+                });
+                var textarea = document.createElement('textarea');
+                textarea.setAttribute('class', 'form-control');
+                textarea.setAttribute('readonly', 'readonly');
+                textarea.value = Object.keys(value)[0];
+                var li = document.createElement('li');
+                var span = document.createElement('span');
+                span.setAttribute("class","tooltiptext");
+                span.innerHTML = "To see full text";
+                icon2.appendChild(span);
+                li.appendChild(textarea);
+                li.appendChild(icon1);
+                li.appendChild(icon2);
+                listSaved.appendChild(li);
+                listSaved.insertBefore(text, li.nextElementSibling);
+           }
+        });
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("block");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+
+    var slideLeft = document.getElementById("left");
+    var slideRight = document.getElementById("right");
+    slideLeft.addEventListener('click', function() {
+        plusDivs(-1);
+    })
+    slideRight.addEventListener('click', function() {
+        plusDivs(1);
+    })
+
+
+    $(window).on('load', function () {
 	        $preloader = $('#preloader'),
-	        $preloader.delay(3000).fadeOut('slow');
+	        $preloader.delay(2500).fadeOut('slow');
         });
         $('.count').each(function () {
             $(this).prop('Counter',0).animate({
@@ -95,68 +130,8 @@
                 }
             });
         });
-        // slider
-        var btn = document.getElementById('press');
-        var range = document.getElementById("range");
-        var rangeValue = document.getElementById("rangeValue");
-        range.addEventListener('change',function(){
-            rangeValue.innerHTML=range.value;
-            btn.disabled = false;
 
-        })
-
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-          var i;
-          var x = document.getElementsByClassName("block");
-          if (n > x.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = x.length}
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-          }
-          x[slideIndex-1].style.display = "inline-block";
-        }
-
-        var slideLeft = document.getElementById("left");
-        var slideRight = document.getElementById("right");
-        slideLeft.addEventListener('click',function(){
-            plusDivs(-1);
-            btn.disabled=true;
-            rangeValue.innerHTML = "";
-        })
-        slideRight.addEventListener('click',function(){
-            plusDivs(1);
-            btn.disabled=true;
-        })
-        // clear
-        var clear = document.getElementById("clear");
-        clear.addEventListener('click',function(event){
-            document.getElementById("area").value="";
-        })
-
-        // copy
-        var copy = document.getElementById("tip");
-        copy.addEventListener('click',function(event){
-            var text = document.getElementById("result");
-            text.select();
-            document.execCommand('copy');
-        })
-
-        // day/night mode
-        $('.toggle').click(function(){
-            $('.toggle').toggleClass('active');
-            $('body').toggleClass('night');
-            $('.badge').toggleClass('night');
-            $('#profile').toggleClass('night');
-        })
-
-        // Phrases
+		 // Phrases
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
@@ -239,5 +214,4 @@
 
 
 
-
-}());
+})

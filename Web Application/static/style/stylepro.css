@@ -9,7 +9,7 @@ body{
 	background-repeat: no-repeat;
 	padding: 5px;
 }
-header > h1{
+header h1{
 	background: linear-gradient(90deg,black,#bdc3c7);
 	border-radius: 10px;
 	border-color: black;
@@ -33,7 +33,7 @@ header > h1{
 	        box-shadow: 0 8px 6px -6px black;
 }
 .container-z{
-	width: 480px;
+	width: 880px;
 	max-height: 700px;
 	background-color: #fff;
 	border-radius: 10px;
@@ -47,13 +47,13 @@ header > h1{
 	border-radius: 50%; 
 	position: absolute;
 	top: -65px;
-	left:178px;
+	left:370px;
 
 }
 .wrapper{
 	position: absolute;
 	top: 240px;
-	left: calc(50% - 240px);
+	left: calc(50% - 440px);
 }
 .content{
 	padding:65px 20px 20px;
@@ -61,7 +61,7 @@ header > h1{
 h2{
 	text-decoration: underline;
 	text-shadow: grey 1px 0 10px;
-
+    display:inline-block;
 }
 
 a{
@@ -91,7 +91,7 @@ h3{
     display:block;
     position:absolute;
     top:25px;
-    left:375px;
+    left:775px;
 }
 ul{
 	display: block;
@@ -103,16 +103,14 @@ ul{
 li {
 	list-style-type: none;
 	border:solid black 2px;
-	border-bottom: none;
+	border-top:solid black 1.5px;
+	border-bottom:solid black 1.5px;
 	padding: 3px;
 	max-height: 200px;
 	position: relative;
 
 }
-li:last-child{
-	border:solid black 2px;
 
-}
 textarea{
 	min-height: 190px;
 	resize: none;
@@ -131,4 +129,70 @@ textarea{
 	left: 40px;
 	top:20px;
 	font-size: 35px;
+}
+p{
+    display:inline-block;
+    font-size:30px;
+    color:white;
+    text-align:center;
+}
+#time{
+    margin-right:15%;
+    margin-top: 15px;
+}
+#words{
+   margin-left:15%;
+}
+.arrow{
+	margin: 5px 10px 0;
+	position: absolute;
+}
+#right{
+    right: 30px;
+}
+#left{
+    left:30px;
+}
+.angle{
+    position: absolute;
+	top:173px;
+	left:7px;
+	cursor:pointer;
+}
+.form-control.falling[readonly]{
+    border: 2px solid black;
+    background:#C0C0C0;
+}
+.angle .tooltiptext {
+  visibility: hidden;
+  min-width: 150px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 1%;
+  left: 50%;
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size:15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.angle .tooltiptext::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right:100%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent black transparent transparent;
+}
+.angle:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

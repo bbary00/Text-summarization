@@ -43,7 +43,6 @@ class LoginForm(FlaskForm):
                                          Length(min=8, max=30,
                                                 message="Invalid password")],
                              render_kw={"placeholder": "Password"})
-    remember = BooleanField('remember me')
 
 
 class RegisterForm(FlaskForm):

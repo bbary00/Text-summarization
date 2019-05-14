@@ -19,7 +19,6 @@ Login
         {{ form.hidden_tag() }}
         {{ form.username(class_="user") }}
         {{ form.password }}
-        {{ wtf.form_field(form.remember) }}
         <button class="btn" type="submit">Sign in</button>
 
         {% for field in form.errors %}

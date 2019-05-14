@@ -29,11 +29,12 @@
    height: 50px;
    box-sizing: border-box;
    background: white;
+   padding: 5px;
    background-size: 100%;
    background-repeat: no-repeat;
    transition: filter .1s linear;
    z-index: 10;
-   font-size: 10px;
+   font-size: 13px;
    line-height: 10px;
 }
 
@@ -57,7 +58,7 @@
 }
 
 .view #one {
-  animation-delay: 1s;
+  animation-delay: 2.5s;
    transform-origin: 50% 0%;
    animation-name: first;
    animation-duration: 500ms;
@@ -68,7 +69,7 @@
 }
 
 .view #two{
-  animation-delay: 1s;
+  animation-delay: 2.5s;
    transform-origin: 50% 100%;
    animation-name: second;
    animation-duration: 500ms;
@@ -79,7 +80,7 @@
 }
 
 .view #three {
-  animation-delay: 1s;
+  animation-delay: 2.5s;
    transform-origin: 50% 0%;
    animation-name: third;
    animation-duration: 850ms;
@@ -142,7 +143,7 @@
   left: calc(50% - 125px);
   top:0;
   animation-name: godown;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-iteration-count:1;
   animation-fill-mode: forwards;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -164,7 +165,7 @@ p{
   top:470px;
   left: calc(50% - 175px);
    animation-name: goup;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-iteration-count:1;
   animation-timing-function:linear;
   animation-fill-mode: forwards;

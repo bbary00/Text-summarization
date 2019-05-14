@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
 	<meta charset="UTF-8">
 	<title>Press</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
@@ -9,26 +8,29 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style/stylepro.css')}}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style/stylepreloader.css')}}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
 	<script src = "{{ url_for('static', filename='js/jquery.js')}}" ></script>
 </head>
 <body>
 	<div id="preloader">
-		<div id="up"></div>
-		<div class="view">
-		   <span class="slice" id="one"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
-		   <span class="slice" id="two"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
-		   <span class="slice" id="three"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
-		</div>
-		<div id="down"></div>
-		<div id="center">
-			<div id="main"></div>
-			<h1 class="count">100</h1>
-		</div>
+	<div id="up"></div>
+	<div class="view">
+	   <span class="slice" id="one"><p></p></span>
+	   <span class="slice" id="two"><p></p></span>
+	   <span class="slice" id="three"><p></p></span>
 	</div>
+	<div id="down"></div>
+	<div id="center">
+  		<div id="main"></div>
+  		<h1 class="count">100</h1>
+	</div>
+</div>
 	<div class="container-x">
 		<header>
 			<h1 class="one-edge-shadow">MyCab</h1>
 		</header>
+		<p id="time"></p>
+		<p id="words"></p>
 		<div class="wrapper">
 			<div class="container-z">
 				<a href="{{url_for('main_route')}}"><i class="fas fa-home" id="home"></i></a>
@@ -38,69 +40,25 @@
 				</div>
 				<div class="content">
 					<div class="sub-content">
-						<h2 id="username"></h2>
-						<h3>My summary</h3>
-						<div class="summary">
-							<ul id="list"></ul>
+						<h2 id="username">Username</h2>
+						<div class="block">
+							<h3>All summary<i class="fas fa-chevron-circle-right arrow" id="right"></i></h3>
+								<div class="summary">
+									<ul id="list"></ul>
+								</div>
+						</div>
+						<div class="block">
+							<h3><i class="fas fa-chevron-circle-left arrow" id="left"></i>Saved summary</h3>
+								<div class="summary">
+									<ul id="list-saved"></ul>
+								</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="clear"></div>
 	</div>
-<script>
-		$(window).ready(function(){
-        $.ajax({
-                data:{},
-                type : 'POST',
-                url : '/db_info'
-            })
-            .done(function(data) {
-            	var list = document.getElementById('list');
-				var u_n = document.getElementById('username');
-             	for(var key in data){
-             		if(key=='user_name'){
-             			u_n.innerHTML = data[key];
-             			continue;
-             		}
-            		var icon = document.createElement('i');
-            		icon.setAttribute('class',"far fa-copy fas copy");
-            		icon.setAttribute('onclick','copy(this)');
-            		icon.addEventListener('click',function(event){
-						this.previousElementSibling.select();
-						document.execCommand('copy');
-            		})
-					var textarea = document.createElement('textarea');
-					textarea.setAttribute('class','form-control');
-					textarea.setAttribute('readonly','readonly');
-					textarea.value = data[key];
-					var li = document.createElement('li');
-					li.appendChild(textarea);
-					li.appendChild(icon);
-					list.insertBefore(li,list.firstChild);
-            	}
-
-            });
-
-		})
-	</script>
-	<script>
-		$(window).on('load', function () {
-	        $preloader = $('#preloader'),
-	        $preloader.delay(2000).fadeOut('slow');
-        });
-        $('.count').each(function () {
-            $(this).prop('Counter',0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 2100,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        });
-	</script>
+	<div class="clear"></div>
+	<script src = "{{ url_for('static', filename='js/profile.js')}}"></script>
 </body>
 </html>
