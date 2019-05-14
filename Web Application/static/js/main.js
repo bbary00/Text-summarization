@@ -12,8 +12,11 @@
                 }
             }
             var form = document.getElementById("form");
-            console.log(sentences);
-
+            var range = document.getElementById("range");
+            range.disabled=true;
+            if(sentences.length >=2){
+                range.disabled=false;
+            }
             while (form.firstChild) {
                 form.removeChild(form.firstChild);
             }

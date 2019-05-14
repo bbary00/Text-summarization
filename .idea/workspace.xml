@@ -4,10 +4,8 @@
     <list default="true" id="f42c9af4-64b1-4a14-b0bb-b5eff5afc434" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/Web Application/forms.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Web Application/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/bohdan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/bohdan.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Application/Potter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/Potter.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/database_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/database_work.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/static/dashboard.css" beforeDir="false" />
@@ -15,19 +13,13 @@
       <change beforePath="$PROJECT_DIR$/Web Application/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/static/starter-template.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/static/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Application/static/style/stylepro.css" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/static/style/stylepro.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/static/stylelogin.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/static/stylesignup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Application/stemming.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/stemming.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/steps to run flask app.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Application/stopwords/cuts.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/templates/dashboard.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Application/templates/index_for_users.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/templates/index_for_users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Application/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Application/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Application/transforming.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web Application/transforming.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="164" column="19" lean-forward="true" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
+            <state relative-caret-position="270">
+              <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -53,8 +45,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="83" column="41" lean-forward="true" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
+            <state relative-caret-position="165">
+              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_users.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="60" column="44" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -62,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="300">
               <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
@@ -77,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/static/style/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="353" column="1" lean-forward="true" selection-start-line="353" selection-start-column="1" selection-end-line="353" selection-end-column="1" />
+            <state relative-caret-position="5295">
+              <caret line="353" column="1" selection-start-line="353" selection-start-column="1" selection-end-line="353" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -86,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/static/js/profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="18" column="55" lean-forward="true" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+            <state relative-caret-position="270">
+              <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -95,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/transforming.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
+            <state relative-caret-position="1470">
               <caret line="100" column="11" selection-start-line="100" selection-start-column="6" selection-end-line="100" selection-end-column="11" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -107,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="615">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -127,7 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>textare</find>
       <find>fire</find>
       <find>Swal.fire</find>
       <find>Pres</find>
@@ -157,6 +166,7 @@
       <find>print</find>
       <find>cons</find>
       <find>up</find>
+      <find>range</find>
     </findStrings>
     <replaceStrings>
       <replace>|</replace>
@@ -173,24 +183,24 @@
         <option value="$PROJECT_DIR$/Web Application/database_work.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Web Application/config.cfg" />
-        <option value="$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html" />
         <option value="$PROJECT_DIR$/Web Application/templates/signup.html" />
         <option value="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py" />
         <option value="$PROJECT_DIR$/Web Application/templates/profile.html" />
         <option value="$PROJECT_DIR$/Web Application/static/style/stylepro.css" />
         <option value="$PROJECT_DIR$/Web Application/static/js/preloader.js" />
-        <option value="$PROJECT_DIR$/Web Application/templates/index_for_users.html" />
         <option value="$PROJECT_DIR$/Web Application/static/js/ajax.js" />
         <option value="$PROJECT_DIR$/Web Application/stemming.py" />
         <option value="$PROJECT_DIR$/Web Application/transforming.py" />
         <option value="$PROJECT_DIR$/Web Application/models.py" />
         <option value="$PROJECT_DIR$/Web Application/static/js/profile.js" />
-        <option value="$PROJECT_DIR$/Web Application/static/js/main.js" />
         <option value="$PROJECT_DIR$/Web Application/static/style/style.css" />
         <option value="$PROJECT_DIR$/Web Application/static/style/stylepreloader.css" />
         <option value="$PROJECT_DIR$/Web Application/templates/login.html" />
         <option value="$PROJECT_DIR$/Web Application/forms.py" />
         <option value="$PROJECT_DIR$/Web Application/app.py" />
+        <option value="$PROJECT_DIR$/Web Application/static/js/main.js" />
+        <option value="$PROJECT_DIR$/Web Application/templates/index_for_users.html" />
+        <option value="$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html" />
       </list>
     </option>
   </component>
@@ -217,6 +227,18 @@
               <item name="Text-summarization" type="b2602c69:ProjectViewProjectNode" />
               <item name="Text-summarization" type="462c0819:PsiDirectoryNode" />
               <item name="Web Application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Text-summarization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Text-summarization" type="462c0819:PsiDirectoryNode" />
+              <item name="Web Application" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Text-summarization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Text-summarization" type="462c0819:PsiDirectoryNode" />
+              <item name="Web Application" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,13 +389,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5570248" visible="true" weight="0.19285183" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5570248" visible="true" weight="0.19285183" />
       <window_info id="Structure" order="1" sideWeight="0.4413793" side_tool="true" weight="0.19657484" />
       <window_info id="Favorites" order="2" sideWeight="0.4429752" side_tool="true" weight="0.19285183" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.18347107" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23305786" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2677686" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4842975" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -487,13 +510,6 @@
     <entry file="file://$PROJECT_DIR$/Web Application/static/images/machine-press.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/static/images/usernight.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -556,13 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/werkzeug/local.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3041">
@@ -598,27 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/static/js/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="18" column="55" lean-forward="true" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="83" column="41" lean-forward="true" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/static/style/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="353" column="1" lean-forward="true" selection-start-line="353" selection-start-column="1" selection-end-line="353" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/static/js/preloader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -633,19 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#strong#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#strong#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -656,9 +631,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/static/style/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5295">
+          <caret line="353" column="1" selection-start-line="353" selection-start-column="1" selection-end-line="353" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/static/js/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/transforming.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
+        <state relative-caret-position="1470">
           <caret line="100" column="11" selection-start-line="100" selection-start-column="6" selection-end-line="100" selection-end-column="11" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
@@ -668,18 +677,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="615">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/app.py">
+    <entry file="file://$PROJECT_DIR$/Web Application/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="164" column="19" lean-forward="true" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
+        <state relative-caret-position="165">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
         </state>
       </provider>
     </entry>
