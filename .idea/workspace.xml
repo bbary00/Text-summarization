@@ -36,17 +36,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="2370">
               <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Web Application/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="150">
+              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -54,17 +54,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="900">
               <caret line="60" column="44" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+            <state relative-caret-position="945">
+              <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -198,9 +198,9 @@
         <option value="$PROJECT_DIR$/Web Application/templates/login.html" />
         <option value="$PROJECT_DIR$/Web Application/forms.py" />
         <option value="$PROJECT_DIR$/Web Application/app.py" />
-        <option value="$PROJECT_DIR$/Web Application/static/js/main.js" />
         <option value="$PROJECT_DIR$/Web Application/templates/index_for_users.html" />
         <option value="$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html" />
+        <option value="$PROJECT_DIR$/Web Application/static/js/main.js" />
       </list>
     </option>
   </component>
@@ -233,6 +233,13 @@
               <item name="Text-summarization" type="462c0819:PsiDirectoryNode" />
               <item name="Web Application" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Text-summarization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Text-summarization" type="462c0819:PsiDirectoryNode" />
+              <item name="Web Application" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Text-summarization" type="b2602c69:ProjectViewProjectNode" />
@@ -389,14 +396,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5570248" visible="true" weight="0.19285183" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5570248" visible="true" weight="0.19285183" />
       <window_info id="Structure" order="1" sideWeight="0.4413793" side_tool="true" weight="0.19657484" />
       <window_info id="Favorites" order="2" sideWeight="0.4429752" side_tool="true" weight="0.19285183" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.18347107" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2677686" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26115704" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4842975" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -633,8 +639,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="2370">
           <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -687,22 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_users.html">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="60" column="44" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/templates/index_for_anonymous.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>

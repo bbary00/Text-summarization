@@ -1,19 +1,32 @@
 (function(){
 
-		$('#area').on('input', function (event) {
+		$('#area').on('change', function (event) {
             var text = event.target.value;
             var sentences = text.replace(/([.?!])\s*(?=[A-ZА-Я])/g, "$1|").split("|");
             var amountOfSentences = sentences.length;
             var lastLetter;
-            for(var i = 0;i<sentences.length;i++){
+            for(var i = 0; i<sentences.length; i++){
+                if(sentences[i].length <=1){
+                    continue;
+                }
                 lastLetter = sentences[i][sentences[i].length-2];
                 if(lastLetter==lastLetter.toUpperCase() && sentences[i].length<3){
                     amountOfSentences-=1;
                 }
             }
+            $('#area').on('keydown', function (event){
+                if(event.keyCode == 8){
+                    range.disabled=true;
+                    rangeValue.innerHTML = "";
+                    btn.disabled=true;
+                }
+
+            })
             var form = document.getElementById("form");
             var range = document.getElementById("range");
             range.disabled=true;
+            var rangeValue = document.getElementById("rangeValue");
+            rangeValue.innerHTML = "";
             if(sentences.length >=2){
                 range.disabled=false;
             }
@@ -137,10 +150,23 @@
             plusDivs(1);
             btn.disabled=true;
         })
+
         // clear
         var clear = document.getElementById("clear");
         clear.addEventListener('click',function(event){
             document.getElementById("area").value="";
+            range.disabled=true;
+            rangeValue.innerHTML = "";
+            btn.disabled=true;
+            while (form.firstChild) {
+                form.removeChild(form.firstChild);
+            }
+            option = document.createElement('option');
+            option.setAttribute('value','');
+            option.setAttribute('disabled',"");
+            option.setAttribute('selected',"");
+            option.innerHTML = "Select the number of sentences";
+            form.appendChild(option);
         })
 
         // copy
