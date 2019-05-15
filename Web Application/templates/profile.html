@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Press</title>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link rel="stylesheet" href="{{ url_for('static', filename='style/stylepro.css')}}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='style/stylepreloader.css')}}">
-	<link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
-	<script src = "{{ url_for('static', filename='js/jquery.js')}}" ></script>
+    <meta charset="UTF-8">
+    <title>Press</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/stylepro.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/stylepreloader.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
+    <script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+      <script src="{{ url_for('static', filename='js/gixi-min.js')}}"></script>
 </head>
+
 <body>
-	<div id="preloader">
-	<div id="up"></div>
-	<div class="view">
-	   <span class="slice" id="one"><p></p></span>
-	   <span class="slice" id="two"><p></p></span>
-	   <span class="slice" id="three"><p></p></span>
-	</div>
-	<div id="down"></div>
-	<div id="center">
-  		<div id="main"></div>
-  		<h1 class="count">100</h1>
-	</div>
-</div>
-	<div class="container-x">
-		<header>
-			<h1 class="one-edge-shadow">MyCab</h1>
-		</header>
-		<p id="time"></p>
-		<p id="words"></p>
-		<div class="wrapper">
-			<div class="container-z">
-				<a href="{{url_for('main_route')}}"><i class="fas fa-home" id="home"></i></a>
-				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ02t10e803wAb6yvCxp94Sv9XxVMtqOFDganij2UVcDK4uqUNB" alt="avatar" class="profile-img">
-				<div class="buttons">
-					<form action="/logout"><button>Sign out</button></form>
-				</div>
-				<div class="content">
-					<div class="sub-content">
-						<h2 id="username">Username</h2>
-						<div class="block">
-							<h3>All summary<i class="fas fa-chevron-circle-right arrow" id="right"></i></h3>
-								<div class="summary">
-									<ul id="list"></ul>
-								</div>
-						</div>
-						<div class="block">
-							<h3><i class="fas fa-chevron-circle-left arrow" id="left"></i>Saved summary</h3>
-								<div class="summary">
-									<ul id="list-saved"></ul>
-								</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="clear"></div>
-	<script src = "{{ url_for('static', filename='js/profile.js')}}"></script>
+    <div id="preloader">
+        <div id="up"></div>
+        <div class="view">
+            <span class="slice" id="one"><p></p></span>
+            <span class="slice" id="two"><p></p></span>
+            <span class="slice" id="three"><p></p></span>
+        </div>
+        <div id="down"></div>
+        <div id="center">
+            <div id="main"></div>
+            <h1 class="count">100</h1>
+        </div>
+    </div>
+    <div class="container-x">
+        <header>
+            <h1 class="one-edge-shadow">MyCab</h1>
+        </header>
+        <p id="time"></p>
+        <p id="words"></p>
+        <div class="wrapper">
+            <div class="container-z">
+                <a href="{{url_for('main_route')}}" id="home"><i class="fas fa-home"></i><p>Back to press</p></a>
+               <div class="gixi"></div>
+                <div class="buttons">
+                    <form action="/logout">
+                        <button>Sign out</button>
+                    </form>
+                </div>
+                <div class="content">
+                    <div class="sub-content">
+                        <h2 id="username">Username</h2>
+                        <div id="more-info">
+                          <h3>Tap to open a guide</h3>
+                              <ul id="list-info">
+                                <li>See info about saved words after Pressing and how many days, hours and minutes you
+                                 have saved on reading.</li>
+                                <li>See and copy your last 10 summaries.</li>
+                                <li>Click a Home button to return to the main page.</li>
+                                <li>Click an Arrow button to see saved summaries and the text that was Pressed.</li>
+                              </ul>
+                        </div>
+                        <div class="block">
+                            <h3>All summary<i class="fas fa-chevron-circle-right arrow" id="right"></i></h3>
+                            <div class="summary">
+                                <ul id="list"></ul>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3><i class="fas fa-chevron-circle-left arrow" id="left"></i>Saved summary</h3>
+                            <div class="summary">
+                                <ul id="list-saved"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <script src="{{ url_for('static', filename='js/profile.js')}}"></script>
 </body>
+
 </html>

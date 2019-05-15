@@ -4,6 +4,7 @@
 body{
 	padding:0 80px 0;
 	background: #eee;
+	min-width: 800px;
 	transition:0.5s;
 }
 header h1{
@@ -141,8 +142,8 @@ h2{
 	position: absolute;
 }
 #rangeValue{
-	background: white;
 	color: black;
+	background: white;
 }
 .block a{
 	color: white;
@@ -355,4 +356,59 @@ body.night .form-control[readonly]{
 
 .badge-danger[href]:focus{
     background-color:#9c35dc;
+}
+
+body.night .block{
+    background:#465055;
+}
+
+body.night .btn{
+    border-color: #465055;
+}
+
+body.night #rangeValue{
+    color:white;
+    background:#465055;
+}
+
+#more-info ul{
+    display:none;
+    background:#800dc67d;
+    border-radius:13px;
+}
+#list-info{
+    width:700px;
+}
+#list-info li::before{
+    color: black;
+}
+#list-info a{
+    color:black;
+    text-decoration:underline;
+}
+body.night h3{
+    color:white;
+    background: #465055;
+      box-shadow:0 0 15px 2px #fff;
+}
+body.night #list-info{
+    color:white;
+    background:#465055;
+
+}
+body.night #list-info li::before{
+    color: white;
+}
+body.night #more-info ul{
+    box-shadow:0 0 15px 2px #fff;
+}
+
+h3{
+    background: #9f61dc;
+    padding: 3px;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: inline-block;
+    margin-bottom: 3px;
 }

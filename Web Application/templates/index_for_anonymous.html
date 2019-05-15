@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Press</title>
-	<link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
-	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="{{ url_for('static', filename='style/style.css')}}">
-	<script src = "{{ url_for('static', filename='js/sweetalert2.min.js')}}"></script>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style/sweetalert2.min.css')}}">
-	<script src = "{{ url_for('static', filename='js/jquery.js')}}" ></script>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style/stylepreloader.css')}}">
+    <meta charset="UTF-8">
+    <title>Press</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/machine-press.png')}}">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css')}}">
+    <script src="{{ url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/sweetalert2.min.css')}}">
+    <script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/stylepreloader.css')}}">
 
 </head>
+
 <body>
-	<div id="preloader">
-	<div id="up"></div>
-	<div class="view">
-	   <span class="slice" id="one"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
-	   <span class="slice" id="two"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
-	   <span class="slice" id="three"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum atque ad dolor architecto corporis repudiandae eveniet, ducimus deleniti minus ab.</p></span>
-	</div>
-	<div id="down"></div>
-	<div id="center">
-  		<div id="main"></div>
-  		<h1 class="count">100</h1>
-	</div>
-</div>
-	<header>
-		<div class="fl-left">
-			<div class="buttons" style="left:0">
-				<a href="{{ url_for('login') }}"><button>Sign in</button></a>
-			</div>
-		</div>
-		<a href="#" class="badge badge-danger"><h1>Press</h1></a>
-	</header>
-	<div class="clear"></div>
-	<!-- header -->
+    <header>
+        <div class="fl-left">
+            <div class="buttons" style="left:0">
+                <a href="{{ url_for('login') }}">
+                    <button>Sign in</button>
+                </a>
+            </div>
+        </div>
+        <a href="#" class="badge badge-danger"><h1>Press</h1></a>
+    </header>
+    <div class="clear"></div>
+    <!-- header -->
 
-	<div class="container-x">
-		<h2 class="lang" key="input">Enter your text<a href="#" title="clear"><i class="far fa-trash-alt clear fas" id="clear"></i></a></h2>
-		<textarea class="form-control"name="" id="area" maxlength="2000" ></textarea>
-		<div class="string">
-			<div class="block sentence">
-				<p class="lang" key="sent" id="sent">Sentence
-				<a href="#"><i class="fas fa-chevron-circle-right fl-right" id="right"></i></a></p>
-				<form class="was-validated">
-					<div class="form-group" id="form-group">
-		    			<select class="custom-select" id="form" required >
-						    <option class="lang" key="select" value="" disabled selected>Select the number of sentences</option>
-    					</select>
-    					<div class="invalid-feedback lang" key="required">Required</div>
-  					</div>
-				</form>
-			</div>
-			<div class="block percentage">
-				<p class="lang" key="perc" id="perc"><a href="#"><i class="fas fa-chevron-circle-left fl-left" id="left"></i></a>Percentage</p>
-				<input type="range" disabled class="custom-range" min="5" max="95" step="5" id="range">
-				<p id="rangeValue"></p>
-			</div>
-		</div>
-		<button type="button" class="btn btn-outline-success" id="press" disabled>PRESS</button>
-		<div class="res">
-			<h2 class="lang" key="result">Result<a href="#result"><span copied="copy to clipboard" id="tip"><i class="far fa-copy fas" id="copy">
+    <div class="container-x">
+        <div id="more-info">
+            <h3>Tap to open a guide</h3>
+            <ul id="list-info">
+                <li>Paste your text into input field, chose number of sentence you want to see in a summary OR
+                  chose a percentage and click on a PRESS button.</li>
+                <li>Press a Trash button to clear input field.</li>
+                <li>Press a Copy button in Result field to copy your summary in a clipboard.</li>
+                <li><a href="{{ url_for('signup') }}">Register</a> to have an access to all advantages</li>
+             </ul>
+        </div>
+        <h2 class="lang" key="input">Enter your text<a href="#" title="clear"><i class="far fa-trash-alt clear fas" id="clear"></i></a></h2>
+        <textarea class="form-control" name="" id="area" maxlength="2000"></textarea>
+        <div class="string">
+            <div class="block sentence">
+                <p class="lang" key="sent" id="sent">Sentence
+                    <a href="#"><i class="fas fa-chevron-circle-right fl-right" id="right"></i></a></p>
+                <form class="was-validated">
+                    <div class="form-group" id="form-group">
+                        <select class="custom-select" id="form" required>
+                            <option class="lang" key="select" value="" disabled selected>Select the number of sentences</option>
+                        </select>
+                        <div class="invalid-feedback lang" key="required">Required</div>
+                    </div>
+                </form>
+            </div>
+            <div class="block percentage">
+                <p class="lang" key="perc" id="perc"><a href="#"><i class="fas fa-chevron-circle-left fl-left" id="left"></i></a>Percentage</p>
+                <input type="range" disabled class="custom-range" min="5" max="95" step="5" id="range">
+                <p id="rangeValue"></p>
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-success" id="press" disabled>PRESS</button>
+        <div class="res">
+            <h2 class="lang" key="result">Result<a href="#result"><span copied="copy to clipboard" id="tip"><i class="far fa-copy fas" id="copy">
 			</i></span></a></h2>
-			<textarea class="form-control"name="" id="result" readonly = "readonly" ></textarea>
-		</div>
-	</div>
+            <textarea class="form-control" name="" id="result" readonly="readonly"></textarea>
+        </div>
+    </div>
 
-
-	<!-- container -->
-	<script src = "{{ url_for('static', filename='js/main.js')}}" ></script>
-	<script src = "{{ url_for('static', filename='js/lang.js')}}" ></script>
-	<script src = "{{ url_for('static', filename='js/ajax.js')}}" ></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- container -->
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/lang.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/ajax.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
 </html>

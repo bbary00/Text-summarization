@@ -212,6 +212,16 @@ $(window).ready(function() {
         secondPiece.innerHTML=pieces[1];
         thirdPiece.innerHTML=pieces[2];
 
+        $('.gixi').gixi();
 
+        function changeClass(){
+            $(this).prev().toggleClass('active')
+        }
+        $(function(){
+            $('#more-info h3').click(function(){
+                $(this).next().slideToggle();
+                $(this).toggleClass('active');
+            })
+        })
 
 })

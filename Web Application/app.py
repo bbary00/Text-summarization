@@ -140,9 +140,9 @@ def get_db_info():
         last_10[str(i)] = summ_data[-i].sum
 
     user_saved_data = dict()
-    saved_len = len(saved_data)
+    my_len = len(saved_data)
     for i, obj in enumerate(saved_data):
-        user_saved_data[saved_len - i] = {obj.summary: obj.text}
+        user_saved_data[my_len - obj.saved_id] = {obj.summary: obj.text}
 
     to_write = {
         "page_data": page_data,
@@ -156,6 +156,8 @@ def get_db_info():
 def save():
     text = request.form['text']
     summ = request.form['summary']
+    if text == "" or summ == "":
+        return "Nothing to save."
     if not Unique(Saved, Saved.summary).is_unique(summ):
         return "This text is already saved."
     user_id = current_user

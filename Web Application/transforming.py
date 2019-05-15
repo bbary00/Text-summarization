@@ -82,20 +82,23 @@ def summarize(data, sent, perc):
     tokens, stemmed_sent = get_cleaned_words(token_sentences)
     main_tokens = word_evaluation(tokens)
     ranking = finding_sent(main_tokens, stemmed_sent)
-    if not perc:
-        n = int(sent)
-        s_idx = ranking[:n]
-        summary = [token_sentences[i] for i in sorted(s_idx)]
-    else:
-        p = int(perc)
-        p = max(1, len(token_sentences) * p // 100)
-        s_idx_p = ranking[:p]
-        summary = [token_sentences[j] for j in sorted(s_idx_p)]
-    s = '\n'.join(summary)
+    try:
+        if not perc:
+            n = int(sent)
+            s_idx = ranking[:n]
+            summary = [token_sentences[i] for i in sorted(s_idx)]
+        else:
+            p = int(perc)
+            p = max(1, len(token_sentences) * p // 100)
+            s_idx_p = ranking[:p]
+            summary = [token_sentences[j] for j in sorted(s_idx_p)]
+        s = '\n'.join(summary)
+    except Exception:
+        return ''
     return s
 
 
-# if __name__ == '__main__':
-#     with open('Potter.txt', 'r', encoding='utf-8', errors='ignore') as f:
-#         text = f.read()
-#     print(summarize(text, 10, 0))
+if __name__ == '__main__':
+    with open('Harri.txt', 'r', encoding='utf-8', errors='ignore') as f:
+        text = f.read()
+    print(summarize(text, 10, 0))

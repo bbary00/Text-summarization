@@ -1,13 +1,11 @@
 *{
 	box-sizing: border-box;
 }
-html{
-	height: 150%;
-}
 body{
 	background: radial-gradient(#bdc3c7,black);
-	background-repeat: no-repeat;
+	min-width: 865px;
 	padding: 5px;
+	background-repeat: no-repeat;
 }
 header h1{
 	background: linear-gradient(90deg,black,#bdc3c7);
@@ -34,24 +32,26 @@ header h1{
 }
 .container-z{
 	width: 880px;
-	max-height: 700px;
+	min-height: 700px;
 	background-color: #fff;
 	border-radius: 10px;
 	position: relative;
+	margin: auto;
 	box-shadow: 0 2px 10px rgba(0,0,0,0.16);
 
 }
-.container-z .profile-img{
+.container-z .gixi{
+    background: white;
+    border: 1px solid #434a4f;
 	width: 125px;
 	height: 125px;
 	border-radius: 50%; 
 	position: absolute;
 	top: -65px;
-	left:370px;
+	left:375px;
 
 }
 .wrapper{
-	position: absolute;
 	top: 240px;
 	left: calc(50% - 440px);
 }
@@ -195,4 +195,36 @@ p{
 .angle:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+#home>p{
+    color:black;
+    font-weight:900;
+    font-size:20px;
+}
+
+#more-info h3{
+    background:black;
+    color:white;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+#list-info{
+    margin:auto;
+    width:600px;
+}
+#list-info li{
+    border:none;
+}
+#list-info li::before{
+    color: black;
+    content: "\2022";
+    margin-left: -1em;
+}
+#more-info ul{
+    display:none;
+    padding-left: 50px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    background: #e5e5e5;
 }
