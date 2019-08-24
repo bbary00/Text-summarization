@@ -4,11 +4,7 @@ import psycopg2
 def save_data(text, sum, id):
     print(type(sum))
     # Connect to the db
-    con = psycopg2.connect(
-        host='localhost',
-        database='press',
-        user='postgres',
-        password='060800Bodia')
+    con = psycopg2
 
     # cursor creating
     cursor = con.cursor()
